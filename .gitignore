@@ -7,3 +7,7 @@ a.out
 # Editor / OS
 .vscode/
 .DS_Store
+
+# Test binaries cached by update_status.py
+.build/
+__pycache__/
