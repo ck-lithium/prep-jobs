@@ -36,8 +36,8 @@ Prep for the Amazon online assessment (OA). The set covers 16 patterns, one Medi
 
 | # | Pattern | Problem | Target | Status |
 |---|---------|---------|--------|--------|
-| [01](amazon_2026-10-28/01_hashing_longestConsecutiveSequence.cpp) | Hashing | [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | O(n) | ⬜ |
-| [02](amazon_2026-10-28/02_twoPointers_containerWithMostWater.cpp) | Two pointers | [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | O(n), O(1) space | ⬜ |
+| [01](amazon_2026-10-28/01_hashing_longestConsecutiveSequence.cpp) | Hashing | [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | O(n) | ✅ |
+| [02](amazon_2026-10-28/02_twoPointers_containerWithMostWater.cpp) | Two pointers | [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | O(n), O(1) space | ✅ |
 | [03](amazon_2026-10-28/03_slidingWindow_longestSubstringNoRepeats.cpp) | Sliding window | [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | O(n) | ⬜ |
 | [04](amazon_2026-10-28/04_prefixSum_subarraySumEqualsK.cpp) | Prefix sum | [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | O(n) | ⬜ |
 | [05](amazon_2026-10-28/05_binarySearchOnAnswer_shipWithinDays.cpp) | Binary search on the answer | [1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) | O(n log Σw) | ⬜ |
