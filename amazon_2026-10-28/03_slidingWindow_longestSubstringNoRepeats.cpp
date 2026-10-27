@@ -32,13 +32,30 @@
  */
 
 #include <bits/stdc++.h>
+#include <unordered_map>
 using namespace std;
 
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        // TODO
-        return 0;
+        
+        int len = 0;
+        int tail = 0;
+        unordered_map<char,int> m;
+
+        for (int i = 0; i < s.size(); i++){
+
+            auto it = m.find(s[i]);
+            if(it != m.end()){
+                tail = max(tail,m[s[i]] + 1);
+            }
+
+            m[s[i]] = i;
+
+            len  = max(len,i - tail + 1);
+        }
+
+        return len;
     }
 };
 
