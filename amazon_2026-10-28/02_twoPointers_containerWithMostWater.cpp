@@ -39,10 +39,10 @@ public:
     int maxArea(vector<int>& height) {
 
         int head = 0, tail = height.size() - 1;
-        int area = INT_MIN;
+        int area = 0;
         int temp = 0;
 
-        for (int i = 0; i < height.size() - 1 && tail > head; i++){
+        while (tail > head){
             temp = min(height[head],height[tail]) * (tail - head);
             if(temp > area) {
                 area = temp;        
