@@ -39,8 +39,40 @@ using namespace std;
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        // TODO
-        return 0;
+
+        if (nums.size() == 0){
+            return 0;
+        }
+        
+        unordered_set<int> set_paths;
+        int max_num = INT_MIN;
+
+        for(int i = 0; i < nums.size(); i++){
+            set_paths.insert(nums[i]);
+        }
+
+        int counter = 0;
+        int index = 2;
+
+        for(auto item : set_paths){
+            
+            if (set_paths.find(item - 1) == set_paths.end()){
+                counter++;
+                auto it2 = set_paths.find(item + 1);
+
+                while (it2 != set_paths.end()){
+                    it2 = set_paths.find(item + index);
+                    counter++;
+                    index++;
+                }
+
+                index = 2;
+                max_num = max(max_num,counter);
+                counter = 0;
+            }
+        }
+
+        return max_num;
     }
 };
 

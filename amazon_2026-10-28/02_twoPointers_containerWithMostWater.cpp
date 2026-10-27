@@ -37,8 +37,22 @@ using namespace std;
 class Solution {
 public:
     int maxArea(vector<int>& height) {
-        // TODO
-        return 0;
+
+        int head = 0, tail = height.size() - 1;
+        int area = INT_MIN;
+        int temp = 0;
+
+        for (int i = 0; i < height.size() - 1 && tail > head; i++){
+            temp = min(height[head],height[tail]) * (tail - head);
+            if(temp > area) {
+                area = temp;        
+            }
+
+            if (height[head] > height[tail]) tail --;
+            else head++;
+        }
+
+        return area;
     }
 };
 
