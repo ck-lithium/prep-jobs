@@ -19,9 +19,9 @@ My coding-interview practice, in C++. There are two kinds of exercises:
 
 The script needs Python 3, `g++` and `make`. `push.py` runs it before every commit and push.
 
-## LeetCode patterns: `leetcode/`
+## LeetCode
 
-Picked for Amazon's online assessment: 16 patterns, one Medium problem each. That's broad rather than deep: the goal is to recognise which pattern a new problem calls for.
+16 algorithm problems in [`leetcode/`](leetcode/), picked for Amazon's online assessment: one Medium problem for each of 16 common patterns. That's broad rather than deep: the goal is to recognise which pattern a new problem calls for.
 
 Each problem is a single self-contained `.cpp` file with:
 
@@ -82,9 +82,9 @@ Click a problem's number to open its file. Warm-up, outside the set: [7. Reverse
 | Trie                        | Many "starts with" queries over a fixed set of words (autocomplete).                            |
 | Design                      | "Implement a class where every operation is O(1)": usually two data structures together.        |
 
-## Debugging exercises: `debugging/`
+## Debugging
 
-Each exercise is a small multi-file codebase with four planted bugs, a `TASK.md` with user bug reports, visible tests (some failing) and hidden tests. You get 45 minutes to find and fix all four. [debugging/README.md](debugging/README.md) explains how to work through one.
+Small buggy codebases in [`debugging/`](debugging/), modelled on the code-repository question in Amazon's online assessment. Each one has four planted bugs, a `TASK.md` with user bug reports, visible tests (some failing) and hidden tests. You get 45 minutes to find and fix all four. [debugging/README.md](debugging/README.md) explains how to work through one.
 
 | # | Codebase | Bugs | Status |
 |---|----------|------|--------|
