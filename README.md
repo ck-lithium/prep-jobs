@@ -40,7 +40,7 @@ Prep for the Amazon online assessment (OA). The set covers 16 patterns, one Medi
 | [02](amazon_2026-10-28/02_twoPointers_containerWithMostWater.cpp) | Two pointers | [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | O(n), O(1) space | ✅ |
 | [03](amazon_2026-10-28/03_slidingWindow_longestSubstringNoRepeats.cpp) | Sliding window | [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | O(n) | ✅ |
 | [04](amazon_2026-10-28/04_prefixSum_subarraySumEqualsK.cpp) | Prefix sum | [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | O(n) | ⬜ |
-| [05](amazon_2026-10-28/05_binarySearchOnAnswer_shipWithinDays.cpp) | Binary search on the answer | [1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) | O(n log Σw) | ⬜ |
+| [05](amazon_2026-10-28/05_binarySearchOnAnswer_shipWithinDays.cpp) | Binary search on the answer | [1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) | O(n log Σw) | ✅ |
 | [06](amazon_2026-10-28/06_heap_kClosestPoints.cpp) | Heap / top K | [973. K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | O(n log k) | ⬜ |
 | [07](amazon_2026-10-28/07_intervals_mergeIntervals.cpp) | Intervals | [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) | O(n log n) | ⬜ |
 | [08](amazon_2026-10-28/08_greedy_partitionLabels.cpp) | Greedy | [763. Partition Labels](https://leetcode.com/problems/partition-labels/) | O(n) | ⬜ |

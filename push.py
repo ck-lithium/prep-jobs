@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Stage every change, commit it as "script push - <what changed>" and push.
+"""Update the README status, then commit every change as "script push - <what changed>" and push.
 
-The message lists the changed files by name, and a whole new folder by its
+It first runs update_status.py, so the README ticks go into the same commit as
+the solutions they belong to. The message lists the changed files by name, and a whole new folder by its
 folder name. If that's longer than MAX_SUBJECT characters, it shortens to
 "script push - exercises", followed by the names of any changed scripts.
 
@@ -49,7 +50,17 @@ def message(paths):
     return PREFIX + ", ".join(exercises + scripts)
 
 
+def update_status():
+    """Run update_status.py. If it can't run, warn but still commit and push."""
+    script = ROOT / "update_status.py"
+    if subprocess.run([sys.executable, str(script)], cwd=ROOT).returncode != 0:
+        print("Warning: update_status.py failed, so the README ticks may be out of date.\n")
+    else:
+        print()
+
+
 def main():
+    update_status()
     paths = changed_paths()
     if not paths:
         print("Nothing to commit.")

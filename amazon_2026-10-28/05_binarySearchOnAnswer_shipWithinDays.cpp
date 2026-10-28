@@ -44,9 +44,43 @@ using namespace std;
 
 class Solution {
 public:
+    bool works(vector<int>& weights, int days, int capacity){
+
+        int temp_c = capacity;
+        int temp_d = days - 1;
+
+        for (int i = 0; i < weights.size(); i++){
+
+            if (weights[i] > temp_c){
+                temp_d--;
+                temp_c = capacity;
+            }
+
+            temp_c -= weights[i];
+
+        }
+
+        return temp_d >= 0;
+    }
+
     int shipWithinDays(vector<int>& weights, int days) {
-        // TODO
-        return 0;
+
+        int lo = INT_MIN, hi = 0;
+
+        for(int i = 0; i < weights.size(); i++){
+            hi += weights[i];
+            lo = max(lo,weights[i]);
+        }
+
+        int mid = 0;
+
+        while (lo < hi){
+            mid = (lo + hi) / 2;
+            if (works(weights,days,mid)) hi = mid;
+            else lo = mid + 1;
+        }
+        
+        return lo;
     }
 };
 
@@ -72,7 +106,7 @@ int main() {
     vector<Case> cases = {
         {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5, 15},
         {{3, 2, 2, 4, 1, 4}, 3, 6},
-        {{1, 2, 3, 1, 1}, 4, 3},
+        {{1, 2, 3, 1, 1}, 4, 3}, // 1 - 2 - 3 - 1,1
         {{5, 5, 5, 5}, 4, 5},
         {{5, 5, 5, 5}, 1, 20},
         {{500}, 1, 500},
