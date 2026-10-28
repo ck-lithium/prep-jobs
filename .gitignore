@@ -11,3 +11,6 @@ a.out
 # Test binaries cached by update_status.py
 .build/
 __pycache__/
+
+# Build folders of the debugging exercises
+build/

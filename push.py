@@ -37,7 +37,7 @@ def changed_paths():
 
 
 def name(path):
-    """amazon_2026-10-28/02_x.cpp -> 02_x.cpp, google_2026-11-05/ -> google_2026-11-05/"""
+    """leetcode/02_x.cpp -> 02_x.cpp, debugging/ -> debugging/"""
     return Path(path).name + ("/" if path.endswith("/") else "")
 
 
