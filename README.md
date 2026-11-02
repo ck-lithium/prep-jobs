@@ -2,85 +2,52 @@
 
 My coding-interview practice, in C++. There are two kinds of exercises:
 
-- **[`leetcode/`](leetcode/)**: 16 algorithm problems, one per common pattern. Each is a single file with the problem statement and tests.
+- **[`leetcode/`](leetcode/)**: 116 algorithm problems grouped by pattern. Each is a single file with the problem statement and tests.
 - **[`debugging/`](debugging/)**: small buggy codebases with bug reports and tests, modelled on the code-repository question in Amazon's SDE online assessment.
 
 ## Tracking progress
 
-`update_status.py` runs every exercise's tests and updates the Status columns below: ✅ when all of its tests pass, ⬜ otherwise.
+`update_status.py` runs the exercises' tests and updates the Status columns in the README files: ✅ when all of an exercise's tests pass, ⬜ otherwise. It also keeps the "Solved" counts below up to date.
 
 ```bash
-./update_status.py                   # LeetCode problems get 0.5 s each
-./update_status.py --time-limit 2    # allow more time
+./update_status.py                   # everything, with a summary per folder
+./update_status.py hashing tree      # only the exercises whose path contains these words
+./update_status.py -v                # one line per exercise
+./update_status.py --time-limit 2    # give LeetCode problems 2 s instead of 0.5 s
 ```
 
-- **LeetCode problems** run with a time limit, which catches slow solutions: correct answers finish in milliseconds, while O(n²) ones take 1 s or more on the large inputs. Compiled tests are cached in `.build/`, and only the files that changed are rebuilt.
+- **LeetCode problems** run with a time limit, which catches slow solutions: correct answers finish in milliseconds, while O(n²) ones take a second or more on the large inputs. Compiled tests are cached in `.build/`, and only the files that changed are rebuilt.
 - **Debugging exercises** run `make check`, which includes the hidden tests, so ✅ means every bug report is fixed.
 
 The script needs Python 3, `g++` and `make`. `push.py` runs it before every commit and push.
 
 ## LeetCode
 
-16 algorithm problems in [`leetcode/`](leetcode/), picked for Amazon's online assessment: one Medium problem for each of 16 common patterns. That's broad rather than deep: the goal is to recognise which pattern a new problem calls for.
+116 problems in [`leetcode/`](leetcode/): an initial set of 16, one per pattern, then 20 folders of 5 problems each, from easy to hard. [leetcode/README.md](leetcode/README.md) lists every problem with its status, and has a table on how to spot each pattern.
 
-Each problem is a single self-contained `.cpp` file with:
-
-- the full problem statement, examples and constraints in a comment at the top
-- the target time and space complexity
-- a short "how to spot this pattern" note
-- a `Solution` class to fill in
-- a small test harness that prints `PASS` / `FAIL` per case. Some files also include one large input that an O(n²) solution won't finish in time.
-
-To run one:
-
-```bash
-cd leetcode
-g++ -std=c++17 -O2 -Wall 01_hashing_longestConsecutiveSequence.cpp && ./a.out
-```
-
-The files use `<bits/stdc++.h>`, so they need GCC (on macOS, install `g++` with Homebrew rather than using the default Clang).
-
-| # | Pattern | Problem | Target | Status |
-|---|---------|---------|--------|--------|
-| [01](leetcode/01_hashing_longestConsecutiveSequence.cpp) | Hashing | [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | O(n) | ✅ |
-| [02](leetcode/02_twoPointers_containerWithMostWater.cpp) | Two pointers | [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | O(n), O(1) space | ✅ |
-| [03](leetcode/03_slidingWindow_longestSubstringNoRepeats.cpp) | Sliding window | [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | O(n) | ✅ |
-| [04](leetcode/04_prefixSum_subarraySumEqualsK.cpp) | Prefix sum | [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | O(n) | ⬜ |
-| [05](leetcode/05_binarySearchOnAnswer_shipWithinDays.cpp) | Binary search on the answer | [1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) | O(n log Σw) | ✅ |
-| [06](leetcode/06_heap_kClosestPoints.cpp) | Heap / top K | [973. K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | O(n log k) | ⬜ |
-| [07](leetcode/07_intervals_mergeIntervals.cpp) | Intervals | [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) | O(n log n) | ⬜ |
-| [08](leetcode/08_greedy_partitionLabels.cpp) | Greedy | [763. Partition Labels](https://leetcode.com/problems/partition-labels/) | O(n) | ⬜ |
-| [09](leetcode/09_monotonicStack_dailyTemperatures.cpp) | Monotonic stack | [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | O(n) | ⬜ |
-| [10](leetcode/10_gridBFS_rottingOranges.cpp) | Grid BFS | [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) | O(m·n) | ⬜ |
-| [11](leetcode/11_graphDFS_numberOfIslands.cpp) | Graph DFS | [200. Number of Islands](https://leetcode.com/problems/number-of-islands/) | O(m·n) | ⬜ |
-| [12](leetcode/12_topologicalSort_courseSchedule.cpp) | Topological sort | [207. Course Schedule](https://leetcode.com/problems/course-schedule/) | O(V + E) | ⬜ |
-| [13](leetcode/13_dp1D_coinChange.cpp) | DP (1D) | [322. Coin Change](https://leetcode.com/problems/coin-change/) | O(amount · coins) | ⬜ |
-| [14](leetcode/14_dp2D_longestCommonSubsequence.cpp) | DP (2D) | [1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/) | O(n·m) | ⬜ |
-| [15](leetcode/15_trie_searchSuggestions.cpp) | Trie | [1268. Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/) | — | ⬜ |
-| [16](leetcode/16_design_lruCache.cpp) | Design | [146. LRU Cache](https://leetcode.com/problems/lru-cache/) | O(1) per op | ⬜ |
-
-Click a problem's number to open its file. Warm-up, outside the set: [7. Reverse Integer](https://leetcode.com/problems/reverse-integer/) in `reverseInteger.cpp` ✅
-
-### Spotting the pattern
-
-| Pattern                     | Reach for it when…                                                                              |
-|-----------------------------|-------------------------------------------------------------------------------------------------|
-| Hashing                     | You keep asking "is X in the input?" and need the answer in O(1).                               |
-| Two pointers                | You pick a pair (i, j) and comparing the two ends rules one of them out. Common on sorted arrays. |
-| Sliding window              | Longest / shortest contiguous subarray or substring that satisfies a condition.                 |
-| Prefix sum                  | Count or find subarrays with sum exactly X, especially when values can be negative.             |
-| Binary search on the answer | "Minimum X such that it's possible", where any bigger X also works (capacity, speed, time).     |
-| Heap / top K                | "Top k", "k-th largest", or repeatedly taking the current smallest / largest item.              |
-| Intervals                   | Ranges or time slots (meetings, bookings). Sort by start first.                                 |
-| Greedy                      | One local choice at a time never hurts the final answer. Often needs a precompute step.         |
-| Monotonic stack             | Next greater / smaller element, "how many days until…", histogram areas.                        |
-| Grid BFS                    | Minimum steps in a grid or unweighted graph, or something spreading from several sources.       |
-| Graph DFS                   | Count groups / regions / connected components, flood fill.                                     |
-| Topological sort            | Dependencies, prerequisites, build order, cycle detection in a directed graph.                  |
-| DP (1D)                     | Min / max / number of ways to reach a target, where greedy can be wrong.                        |
-| DP (2D)                     | Two strings or arrays compared position by position, or paths in a grid.                        |
-| Trie                        | Many "starts with" queries over a fixed set of words (autocomplete).                            |
-| Design                      | "Implement a class where every operation is O(1)": usually two data structures together.        |
+| Folder | Pattern | Solved |
+|--------|---------|--------|
+| [00_initial](leetcode/00_initial/) | One problem per pattern, picked for Amazon's online assessment | 4/16 |
+| [01_hashing](leetcode/01_hashing/) | Hashing | 0/5 |
+| [02_two_pointers](leetcode/02_two_pointers/) | Two pointers | 0/5 |
+| [03_sliding_window](leetcode/03_sliding_window/) | Sliding window | 0/5 |
+| [04_prefix_sum](leetcode/04_prefix_sum/) | Prefix sum | 0/5 |
+| [05_binary_search](leetcode/05_binary_search/) | Binary search | 0/5 |
+| [06_heap](leetcode/06_heap/) | Heap / top K | 0/5 |
+| [07_intervals](leetcode/07_intervals/) | Intervals | 0/5 |
+| [08_greedy](leetcode/08_greedy/) | Greedy | 0/5 |
+| [09_monotonic_stack](leetcode/09_monotonic_stack/) | Monotonic stack | 0/5 |
+| [10_grid_bfs](leetcode/10_grid_bfs/) | Grid BFS | 0/5 |
+| [11_graph_dfs](leetcode/11_graph_dfs/) | Graph DFS | 0/5 |
+| [12_topological_sort](leetcode/12_topological_sort/) | Topological sort | 0/5 |
+| [13_dp_1d](leetcode/13_dp_1d/) | DP (1D) | 0/5 |
+| [14_dp_2d](leetcode/14_dp_2d/) | DP (2D) | 0/5 |
+| [15_trie](leetcode/15_trie/) | Trie | 0/5 |
+| [16_design](leetcode/16_design/) | Design | 0/5 |
+| [17_linked_list](leetcode/17_linked_list/) | Linked list | 0/5 |
+| [18_binary_tree](leetcode/18_binary_tree/) | Binary tree | 0/5 |
+| [19_backtracking](leetcode/19_backtracking/) | Backtracking | 0/5 |
+| [20_shortest_path_union_find](leetcode/20_shortest_path_union_find/) | Shortest paths & union-find | 0/5 |
 
 ## Debugging
 
