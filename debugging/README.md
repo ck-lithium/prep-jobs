@@ -1,6 +1,6 @@
 # Debugging exercises
 
-Small C++ codebases with bugs planted in them, modelled on the code-repository question in Amazon's SDE online assessment. Each one gives you an unfamiliar codebase, some bug reports and a few tests, and you have to find and fix the bugs before the timer runs out.
+Small C++ codebases with bugs planted in them. Each one gives you an unfamiliar codebase, some bug reports and a few tests, and you have to find and fix the bugs before the timer runs out.
 
 | # | Codebase | Time |
 |---|---|---|

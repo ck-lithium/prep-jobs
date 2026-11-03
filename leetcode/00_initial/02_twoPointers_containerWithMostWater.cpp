@@ -86,7 +86,7 @@ int main() {
     for (auto& c : cases) check(sol.maxArea(c.height), c.expected);
 
     // Big input: 10^5 lines. An O(n^2) solution takes ~2 s here (too slow for the
-    // OA's time limit); an O(n) one finishes instantly.
+    // time limit); an O(n) one finishes instantly.
     vector<int> big(100000, 10000);
     check(sol.maxArea(big), 999990000);
 

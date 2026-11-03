@@ -3,7 +3,7 @@
 My coding-interview practice, in C++. There are two kinds of exercises:
 
 - **[`leetcode/`](leetcode/)**: 116 algorithm problems grouped by pattern. Each is a single file with the problem statement and tests.
-- **[`debugging/`](debugging/)**: small buggy codebases with bug reports and tests, modelled on the code-repository question in Amazon's SDE online assessment.
+- **[`debugging/`](debugging/)**: small buggy codebases with bug reports and tests. You find and fix the bugs against the clock.
 
 ## Tracking progress
 
@@ -27,7 +27,7 @@ The script needs Python 3, `g++` and `make`. `push.py` runs it before every comm
 
 | Folder | Pattern | Solved |
 |--------|---------|--------|
-| [00_initial](leetcode/00_initial/) | One problem per pattern, picked for Amazon's online assessment | 4/16 |
+| [00_initial](leetcode/00_initial/) | One problem per pattern, as a first pass | 6/16 |
 | [01_hashing](leetcode/01_hashing/) | Hashing | 0/5 |
 | [02_two_pointers](leetcode/02_two_pointers/) | Two pointers | 0/5 |
 | [03_sliding_window](leetcode/03_sliding_window/) | Sliding window | 0/5 |
@@ -51,7 +51,7 @@ The script needs Python 3, `g++` and `make`. `push.py` runs it before every comm
 
 ## Debugging
 
-Small buggy codebases in [`debugging/`](debugging/), modelled on the code-repository question in Amazon's online assessment. Each one has four planted bugs, a `TASK.md` with user bug reports, visible tests (some failing) and hidden tests. You get 45 minutes to find and fix all four. [debugging/README.md](debugging/README.md) explains how to work through one.
+Small buggy codebases in [`debugging/`](debugging/). Each one has four planted bugs, a `TASK.md` with user bug reports, visible tests (some failing) and hidden tests. You get 45 minutes to find and fix all four. [debugging/README.md](debugging/README.md) explains how to work through one.
 
 | # | Codebase | Bugs | Status |
 |---|----------|------|--------|

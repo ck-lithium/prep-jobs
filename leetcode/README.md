@@ -2,7 +2,7 @@
 
 116 problems in C++, grouped by the pattern that solves them:
 
-- **[`00_initial/`](00_initial/)**: 16 problems, one per pattern, picked for Amazon's online assessment. Start here.
+- **[`00_initial/`](00_initial/)**: 16 problems, one per pattern, as a first pass. Start here.
 - **20 pattern folders**: 5 problems each, ordered from easy to hard. Folders 01–16 go deeper into the patterns of the initial set; 17–20 add linked lists, binary trees, backtracking, and shortest paths / union-find.
 
 Each problem is a single self-contained `.cpp` file with:
@@ -34,9 +34,9 @@ To update the Status columns below, run the script from the repo root. A word li
 | [01](00_initial/01_hashing_longestConsecutiveSequence.cpp) | Hashing | [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | O(n) | ✅ |
 | [02](00_initial/02_twoPointers_containerWithMostWater.cpp) | Two pointers | [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | O(n), O(1) space | ✅ |
 | [03](00_initial/03_slidingWindow_longestSubstringNoRepeats.cpp) | Sliding window | [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | O(n) | ✅ |
-| [04](00_initial/04_prefixSum_subarraySumEqualsK.cpp) | Prefix sum | [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | O(n) | ⬜ |
+| [04](00_initial/04_prefixSum_subarraySumEqualsK.cpp) | Prefix sum | [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | O(n) | ✅ |
 | [05](00_initial/05_binarySearchOnAnswer_shipWithinDays.cpp) | Binary search on the answer | [1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) | O(n log Σw) | ✅ |
-| [06](00_initial/06_heap_kClosestPoints.cpp) | Heap / top K | [973. K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | O(n log k) | ⬜ |
+| [06](00_initial/06_heap_kClosestPoints.cpp) | Heap / top K | [973. K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | O(n log k) | ✅ |
 | [07](00_initial/07_intervals_mergeIntervals.cpp) | Intervals | [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) | O(n log n) | ⬜ |
 | [08](00_initial/08_greedy_partitionLabels.cpp) | Greedy | [763. Partition Labels](https://leetcode.com/problems/partition-labels/) | O(n) | ⬜ |
 | [09](00_initial/09_monotonicStack_dailyTemperatures.cpp) | Monotonic stack | [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | O(n) | ⬜ |

@@ -39,8 +39,27 @@ using namespace std;
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
-        // TODO
-        return 0;
+
+        int count = 0;
+        int temp = 0;
+
+        unordered_map<int,int> m;
+
+        m[temp]++;
+
+        for(int i = 0; i < nums.size(); i++){
+
+            temp += nums[i];
+            
+            auto it = m.find(temp - k);
+
+            if (it != m.end()) count += it->second;
+
+            m[temp]++;
+            
+        }
+
+        return count;
     }
 };
 

@@ -34,8 +34,44 @@ using namespace std;
 class Solution {
 public:
     vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
-        // TODO
-        return {};
+
+        vector<vector<int>> result;
+        priority_queue<pair<int,int>> q;
+        
+
+        for (int i = 0; i < points.size(); i++){
+
+            int dist = points[i][0] * points[i][0] + points[i][1] * points[i][1];
+
+            if(q.size() < k){
+                q.push({dist,i});
+            }else{
+
+                pair<int,int> temp = q.top();
+
+                int dist_temp = temp.first;
+
+                if (dist < dist_temp){
+                    q.pop();
+                    q.push({dist,i});
+                }
+
+            }
+
+        }
+
+        while (!q.empty()){
+
+            pair<int,int> temp = q.top();
+            q.pop();
+
+            result.push_back(points[temp.second]);
+
+        }
+        
+        
+
+        return result;
     }
 };
 

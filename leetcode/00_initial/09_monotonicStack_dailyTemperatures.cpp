@@ -76,7 +76,7 @@ int main() {
     for (auto& c : cases) check(sol.dailyTemperatures(c.temperatures), c.expected);
 
     // Big input: 10^5 days, all 50 except a 51 at the end.
-    // An O(n^2) solution takes ~1 s here (too slow for the OA's time limit); an
+    // An O(n^2) solution takes ~1 s here (too slow for the time limit); an
     // O(n) one finishes instantly. (Prints true/false only.)
     vector<int> big(100000, 50);
     big.back() = 51;

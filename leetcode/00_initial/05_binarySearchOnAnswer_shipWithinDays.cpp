@@ -36,7 +36,7 @@
  *
  * How to spot this pattern: "find the minimum X such that <it is possible>" (or
  * the maximum X). Checking one candidate X is easy, and if X works then every
- * bigger X also works. Very common in Amazon OAs (capacity, speed, time limits).
+ * bigger X also works. Very common in interviews (capacity, speed, time limits).
  */
 
 #include <bits/stdc++.h>
