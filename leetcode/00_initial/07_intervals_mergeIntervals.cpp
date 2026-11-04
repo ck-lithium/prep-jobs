@@ -39,9 +39,31 @@ using namespace std;
 
 class Solution {
 public:
+
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        // TODO
-        return {};
+        
+        sort(intervals.begin(), intervals.end());
+
+        vector<vector<int>> result;
+
+        vector<int> current_block = intervals[0];
+
+        for (int i = 1; i < intervals.size(); i++){
+
+            vector<int> candidate = intervals[i];
+
+            if (current_block[1] >= candidate[0]){
+                current_block[1] = max(candidate[1],current_block[1]);
+            }else{ 
+                result.push_back(current_block);
+                current_block = candidate;
+            }
+
+        }
+
+        result.push_back(current_block);
+
+        return result;
     }
 };
 

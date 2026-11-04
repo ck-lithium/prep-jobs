@@ -36,8 +36,32 @@ using namespace std;
 class Solution {
 public:
     vector<int> partitionLabels(string s) {
-        // TODO
-        return {};
+
+        vector<int> result;
+        unordered_map<char, int> m;
+
+        for (int i = 0; i < s.size(); i++){
+
+            m[s[i]] = i;
+
+        }
+
+        int start = 0, end = 0;
+
+
+        for(int i = 0; i < s.size(); i++){
+
+            end = max(end,m[s[i]]);
+
+            if(i == end){
+                result.push_back(end - start + 1);
+                start = i + 1;
+                end = i + 1;
+            }
+           
+        }
+
+        return result;
     }
 };
 

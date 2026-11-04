@@ -37,8 +37,8 @@ To update the Status columns below, run the script from the repo root. A word li
 | [04](00_initial/04_prefixSum_subarraySumEqualsK.cpp) | Prefix sum | [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | O(n) | ✅ |
 | [05](00_initial/05_binarySearchOnAnswer_shipWithinDays.cpp) | Binary search on the answer | [1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) | O(n log Σw) | ✅ |
 | [06](00_initial/06_heap_kClosestPoints.cpp) | Heap / top K | [973. K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | O(n log k) | ✅ |
-| [07](00_initial/07_intervals_mergeIntervals.cpp) | Intervals | [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) | O(n log n) | ⬜ |
-| [08](00_initial/08_greedy_partitionLabels.cpp) | Greedy | [763. Partition Labels](https://leetcode.com/problems/partition-labels/) | O(n) | ⬜ |
+| [07](00_initial/07_intervals_mergeIntervals.cpp) | Intervals | [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) | O(n log n) | ✅ |
+| [08](00_initial/08_greedy_partitionLabels.cpp) | Greedy | [763. Partition Labels](https://leetcode.com/problems/partition-labels/) | O(n) | ✅ |
 | [09](00_initial/09_monotonicStack_dailyTemperatures.cpp) | Monotonic stack | [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | O(n) | ⬜ |
 | [10](00_initial/10_gridBFS_rottingOranges.cpp) | Grid BFS | [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) | O(m·n) | ⬜ |
 | [11](00_initial/11_graphDFS_numberOfIslands.cpp) | Graph DFS | [200. Number of Islands](https://leetcode.com/problems/number-of-islands/) | O(m·n) | ⬜ |
