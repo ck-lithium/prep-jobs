@@ -47,9 +47,51 @@ using namespace std;
 
 class Solution {
 public:
+
     int orangesRotting(vector<vector<int>>& grid) {
-        // TODO
-        return 0;
+
+        int round = 0;
+        queue<pair<int,int>> rotten;
+        
+        for(int i = 0; i < grid.size(); i++){
+            for(int j = 0; j < grid[0].size(); j++){
+                if(grid[i][j] == 2){
+                    rotten.push({i,j});
+                }
+            }
+        }
+
+        int dr[] = {1, -1, 0, 0}, dc[] = {0, 0, 1, -1};
+
+        while (!rotten.empty()) {
+
+            int count = rotten.size();
+                             
+            for (int i = 0; i < count; i++) {
+                auto [r, c] = rotten.front();
+                rotten.pop();
+                for (int k = 0; k < 4; k++) {
+                    int nr = r + dr[k], nc = c + dc[k];
+                    if (nr < 0 || nc < 0 || nr > grid.size() - 1 || nc > grid[0].size() - 1 || grid[nr][nc] == 2 || grid[nr][nc] == 0) continue;
+                    
+                    grid[nr][nc] = 2;
+                    rotten.push({nr,nc});
+                }
+            }
+            
+            if (!rotten.empty()) round++;
+
+        }
+
+        for(int i = 0; i < grid.size(); i++){
+            for(int j = 0; j < grid[0].size(); j++){
+                if(grid[i][j] == 1){
+                    return -1;
+                }
+            }
+        }
+
+        return round;
     }
 };
 
