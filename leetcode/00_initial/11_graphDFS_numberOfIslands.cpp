@@ -37,9 +37,39 @@ using namespace std;
 
 class Solution {
 public:
+
+    void sink(vector<vector<char>>& grid, int r0, int c0) {
+
+        const int rows = grid.size(), cols = grid[0].size();
+        const int dr[] = {1, -1, 0, 0}, dc[] = {0, 0, 1, -1};
+        stack<pair<int, int>> todo;
+        todo.push({r0, c0});
+        grid[r0][c0] = '0';                       
+        while (!todo.empty()) {
+            auto [r, c] = todo.top();
+            todo.pop();
+            for (int k = 0; k < 4; k++) {
+                int nr = r + dr[k], nc = c + dc[k];
+                if (nr < 0 || nc < 0 || nr >= rows || nc >= cols || grid[nr][nc] != '1') continue;
+                grid[nr][nc] = '0';
+                todo.push({nr, nc});
+            }
+        }
+    }   
+
     int numIslands(vector<vector<char>>& grid) {
-        // TODO
-        return 0;
+
+        int count = 0;
+        
+        for (int i = 0; i < grid.size(); i++){
+            for (int j = 0; j < grid[0].size(); j++){
+                if (grid[i][j] == '1'){
+                    sink(grid,i,j);
+                    count++;
+                }
+            }
+        }
+        return count;
     }
 };
 
