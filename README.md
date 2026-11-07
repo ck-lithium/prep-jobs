@@ -21,6 +21,21 @@ My coding-interview practice, in C++. There are two kinds of exercises:
 
 The script needs Python 3, `g++` and `make`. `push.py` runs it before every commit and push.
 
+## Starting over
+
+`erase_solutions.py` puts exercises back to their unsolved version, to redo them later or to let someone else try them.
+
+```bash
+./erase_solutions.py coinChange               # the exercises whose path contains these words
+./erase_solutions.py 00_initial debugging
+./erase_solutions.py --all                    # everything
+./erase_solutions.py -n 00_initial            # only list what would be erased
+```
+
+- **What it restores:** the unsolved version of every exercise is kept in `.originals/`, at the same path. A LeetCode problem gets its original code back, while its statement and tests stay as they are. A debugging exercise gets its original buggy `src/` folder back. Then the script runs `update_status.py`, so the README files show ⬜ again.
+- **Your solutions aren't lost:** they stay in git history, and the script prints the command to get one back. It refuses to erase changes that aren't committed yet, unless you pass `--force`, because those would be lost for good.
+- **New exercises:** put their unsolved version in `.originals/` too, or the script skips them.
+
 ## LeetCode
 
 116 problems in [`leetcode/`](leetcode/): an initial set of 16, one per pattern, then 20 folders of 5 problems each, from easy to hard. [leetcode/README.md](leetcode/README.md) lists every problem with its status, and has a table on how to spot each pattern.
