@@ -42,8 +42,8 @@ To update the Status columns below, run the script from the repo root. A word li
 | [09](00_initial/09_monotonicStack_dailyTemperatures.cpp) | Monotonic stack | [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | O(n) | ✅ |
 | [10](00_initial/10_gridBFS_rottingOranges.cpp) | Grid BFS | [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) | O(m·n) | ✅ |
 | [11](00_initial/11_graphDFS_numberOfIslands.cpp) | Graph DFS | [200. Number of Islands](https://leetcode.com/problems/number-of-islands/) | O(m·n) | ✅ |
-| [12](00_initial/12_topologicalSort_courseSchedule.cpp) | Topological sort | [207. Course Schedule](https://leetcode.com/problems/course-schedule/) | O(V + E) | ⬜ |
-| [13](00_initial/13_dp1D_coinChange.cpp) | DP (1D) | [322. Coin Change](https://leetcode.com/problems/coin-change/) | O(amount · coins) | ⬜ |
+| [12](00_initial/12_topologicalSort_courseSchedule.cpp) | Topological sort | [207. Course Schedule](https://leetcode.com/problems/course-schedule/) | O(V + E) | ✅ |
+| [13](00_initial/13_dp1D_coinChange.cpp) | DP (1D) | [322. Coin Change](https://leetcode.com/problems/coin-change/) | O(amount · coins) | ✅ |
 | [14](00_initial/14_dp2D_longestCommonSubsequence.cpp) | DP (2D) | [1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/) | O(n·m) | ⬜ |
 | [15](00_initial/15_trie_searchSuggestions.cpp) | Trie | [1268. Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/) | — | ⬜ |
 | [16](00_initial/16_design_lruCache.cpp) | Design | [146. LRU Cache](https://leetcode.com/problems/lru-cache/) | O(1) per op | ⬜ |

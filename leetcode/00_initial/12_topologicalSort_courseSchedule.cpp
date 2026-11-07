@@ -38,9 +38,43 @@ using namespace std;
 
 class Solution {
 public:
+
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
-        // TODO
-        return false;
+        
+        vector<vector<int>> graph (numCourses);
+        vector<bool> visited (numCourses,false);
+        vector<bool> visiting (numCourses,false); 
+
+        for(const auto& course : prerequisites){
+            graph[course[1]].push_back(course[0]);
+        }
+
+        stack<pair<int,int>> st;
+
+        for (int i = 0; i < numCourses; i++){
+
+            if(visited[i]) continue;
+
+            visiting[i] = true;
+            st.push({i,0});
+            while(!st.empty()){
+                auto [u,j] = st.top();
+                st.pop();
+                if(j < graph[u].size()){
+                    st.push({u, j + 1});
+                    int next = graph[u][j];
+                    if (visiting[next]) return false;
+                    if (visited[next]) continue;
+                    visiting[next] = true;
+                    st.push({next, 0});
+                }else{
+                    visiting[u] = false;
+                    visited[u] = true;
+                }
+            }
+        }
+
+        return true;
     }
 };
 
