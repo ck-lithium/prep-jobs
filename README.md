@@ -42,7 +42,7 @@ The script needs Python 3, `g++` and `make`. `push.py` runs it before every comm
 
 | Folder | Pattern | Solved |
 |--------|---------|--------|
-| [00_initial](leetcode/00_initial/) | One problem per pattern, as a first pass | 13/16 |
+| [00_initial](leetcode/00_initial/) | One problem per pattern, as a first pass | 15/16 |
 | [01_hashing](leetcode/01_hashing/) | Hashing | 0/5 |
 | [02_two_pointers](leetcode/02_two_pointers/) | Two pointers | 0/5 |
 | [03_sliding_window](leetcode/03_sliding_window/) | Sliding window | 0/5 |

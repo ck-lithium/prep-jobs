@@ -46,10 +46,65 @@ using namespace std;
 
 class Solution {
 public:
+
+
+    //versione custom con sorting e not-so-brute force
+    // vector<vector<string>> suggestedProducts(vector<string>& products, string searchWord) {
+
+    //     sort(products.begin(),products.end());
+
+    //     string building = "";
+    //     vector<vector<string>> result;
+
+    //     for(int i = 0; i < (int)searchWord.size(); i++){
+    //         building += searchWord[i];
+    //         vector<string> toBepushed;
+    //         int count = 0;
+    //         for(int j = 0; j < (int)products.size() && count < 3; j++){
+    //             string temp = products[j].substr(0,building.size());
+    //             if (building == temp){
+    //                 toBepushed.push_back(products[j]);
+    //                 count++;
+    //             }
+    //         }
+    //         result.push_back(toBepushed);
+    //     }
+
+    //     return result;
+    // }
+
     vector<vector<string>> suggestedProducts(vector<string>& products, string searchWord) {
-        // TODO
-        return {};
+
+        sort(products.begin(),products.end());
+        vector<vector<string>> result;
+        string building = "";
+
+        for (int i = 0; i < (int)searchWord.size(); i++){
+            building += searchWord[i];
+
+            int lo = 0, hi = products.size();
+
+            while (lo<hi){
+                int mid = hi/2 + lo/2;
+                string temp = products[mid];
+                if(temp >= building) hi = mid; else lo = mid + 1;
+            }
+
+            vector<string> toBepushed;
+            
+            for(int j = lo; j < (int)products.size() && j < lo + 3; j++){
+                string temp = products[j].substr(0,building.size());
+                if (building == temp){
+                    toBepushed.push_back(products[j]);
+                }
+            }
+            result.push_back(toBepushed);
+
+        }
+    
+        return result;
     }
+
 };
 
 // ---------------------------------------------------------------------------
